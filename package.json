@@ -1,5 +1,5 @@
 {
-  "name": "remove-from-project",
+  "name": "remove-from-project-classic",
   "version": "1.0.0",
   "description": "A GitHub Action",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joshmgross/remove-from-project.git"
+    "url": "git+https://github.com/joshmgross/remove-from-project-classic.git"
   },
   "keywords": [
     "Actions",
@@ -24,9 +24,9 @@
   "author": "joshmgross",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joshmgross/remove-from-project/issues"
+    "url": "https://github.com/joshmgross/remove-from-project-classic/issues"
   },
-  "homepage": "https://github.com/joshmgross/remove-from-project#readme",
+  "homepage": "https://github.com/joshmgross/remove-from-project-classic#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
