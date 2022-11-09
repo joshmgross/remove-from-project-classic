@@ -1,11 +1,33 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Remove from Project'
+description: 'Removes an issue or pull request from a classic project board'
+author: 'joshmgross'
 inputs:
-  my-input:
+  issue-number:
+    required: true
+    description: 'The number of the issue or pull request to remove.'
+  issue-owner:
     required: false
-    description: 'a great description of your input'
-    default: 'a suitable default value'
+    description: 'The owner of the issue or pull request to remove. Deafults to the current repository owner.'
+  issue-repository:
+    required: false
+    description: 'The repository of the issue or pull request to remove. Defaults to the current repository.'
+  project-owner:
+    required: true
+    description: 'The organization that contains the project.'
+  project-number:
+    required: true:
+    description: 'The number of the project board.'
+  token:
+    default: ${{ github.token }}
+    description: >
+      A token with access to the project board and issue or pull request.
+      For projects outside of the current workflow's repository,
+      a separate token is required.
+    required: false
+  fail-not-found:
+    required: false
+    default: false
+    description: 'Fail the action if the issue is not on the project board.'
 runs:
   using: 'node16'
   main: 'dist/index.js'
