@@ -15,7 +15,7 @@ inputs:
     required: true
     description: 'The organization that contains the project.'
   project-number:
-    required: true:
+    required: true
     description: 'The number of the project board.'
   token:
     default: ${{ github.token }}
