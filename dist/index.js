@@ -10534,9 +10534,12 @@ async function run() {
             throw new Error("issue-number must be a number");
         }
         const token = core.getInput("token", { required: true });
-        const projectOwner = core.getInput("project-owner", { required: true });
         const projectNumber = Number(core.getInput("project-number", { required: true }));
         const currentRepository = github.context.payload.repository;
+        const projectOwner = core.getInput("project-owner") || currentRepository?.owner.login;
+        if (!projectOwner) {
+            throw new Error("project-owner must be specified, unable to determine from context");
+        }
         const issueOwner = core.getInput("issue-owner") || currentRepository?.owner.login;
         const issueRepository = core.getInput("issue-repository") || currentRepository?.name;
         if (!issueOwner || !issueRepository) {

@@ -7,12 +7,12 @@ inputs:
     description: 'The number of the issue or pull request to remove.'
   issue-owner:
     required: false
-    description: 'The owner of the issue or pull request to remove. Deafults to the current repository owner.'
+    description: 'The owner of the issue or pull request to remove. Defaults to the current repository owner.'
   issue-repository:
     required: false
     description: 'The repository of the issue or pull request to remove. Defaults to the current repository.'
   project-owner:
-    required: true
+    required: false
     description: 'The organization that contains the project.'
   project-number:
     required: true
