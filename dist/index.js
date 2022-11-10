@@ -10563,9 +10563,10 @@ async function run() {
             databaseId = pr.id;
         }
         core.info(`${issue.pull_request ? "Issue" : "Pull request"} database ID: ${databaseId}`);
+        const expectedType = issue.pull_request ? "PullRequest" : "Issue";
         const cards = await getCards(projectOwner, projectNumber, token);
         for (const card of cards) {
-            if (card.content?.databaseId === databaseId) {
+            if (expectedType === card.content.__typename && card.content?.databaseId === databaseId) {
                 core.info(`Removing ${card.databaseId} from the project`);
                 // https://docs.github.com/en/rest/projects/cards#delete-a-project-card
                 await octokit.request("DELETE /projects/columns/cards/{card_id}", {
